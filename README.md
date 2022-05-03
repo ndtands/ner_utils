@@ -9,13 +9,37 @@
 - convert doccano to CONLL
 - convert CONLL to doccano
 
-## How to using 
+## 1.How to using 
 Setup
 ```
 pip install ner-utils
 ```
 Using
 ```python
-from utils import utils
-data = utils.read_pickle('demo.pkl')
+from ner_utils import ner_utils
+data = ner_utils.read_pickle('demo.pkl')
+```
+
+## 2. How to package module to pypi
+- you need account on: https://pypi.org/ and  https://test.pypi.org/
+- You create folder include file: main.py (main code), licence.txt, __init__.py, README.MD, setup.cfg
+- Create file setup.py include some information of package
+```python
+from setuptools import setup, find_packages
+setup(name='ner_utils',
+      version='0.1',
+      description='utils for NER NLP',
+      author='ndtan',
+      author_email='ndtan.hcm@gmail.com',
+      packages = ['ner_utils'],
+      zip_safe=False)
+```
+- build package
+```
+python setup.py sdist
+pip install twine
+```
+- Upload zipfile to pypi
+```
+twine upload dist/*
 ```
