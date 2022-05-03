@@ -34,8 +34,8 @@ write_conll(data,'new.txt')
 demo.txt
 
 ...
-Phái	B-ORGANIZATION
-đoàn	I-ORGANIZATION
+Phái	B-ORGANIZATION <\br>
+đoàn	I-ORGANIZATION 
 Nga	B-LOCATION
 và	O
 Ukraine	B-LOCATION
